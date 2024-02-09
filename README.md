@@ -16,14 +16,6 @@ To use this package, please install the optimization toolbox in MATLAB and insta
 
 To install and link FFTW3 to your system, please refer to the FFTW_install_tutorial_2024.pdf
 
-Users need to have a C++ compiler in MATLAB and compile the cpp functions below (Only need to compile them once). Or execute the compile_cpp.m file to complete compilation.
-
-mex -I/usr/local/include -L/usr/local/Cellar/fftw_x86_64/lib -lfftw3 log_density.cpp -output log_density
-mex -I/usr/local/include -L/usr/local/Cellar/fftw_x86_64/lib -lfftw3 toeplitz_prod.cpp -output toeplitz_prod 
-mex -I/usr/local/include -L/usr/local/Cellar/fftw_x86_64/lib -lfftw3 toeplitz_solve.cpp -output toeplitz_solve 
-mex -I/usr/local/include -L/usr/local/Cellar/fftw_x86_64/lib -lfftw3 phi_log_det.cpp -output phi_log_det
-mex -I/usr/local/include -L/usr/local/Cellar/fftw_x86_64/lib -lfftw3 toeplitz_trace_grad.cpp -output toeplitz_trace_grad
-
 
 Contents:
 
