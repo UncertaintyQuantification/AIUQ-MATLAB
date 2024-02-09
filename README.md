@@ -1,4 +1,4 @@
-# SAM
+# AIUQ
 This package is for scattering analysis of microscopy. The code have been tested in MATLAB version 2022b.
 
 Description:
