@@ -1,0 +1,44 @@
+# SAM
+This package is for scattering analysis of microscopy. The code have been tested in MATLAB version 2022b.
+
+Description:
+
+The package allows users to simulate 2D movements of some particels from different stochastic processes and model the mean squared displacement (MSD) given a dataset using Gaussian processes. Parameter estimation is performed in a fast approach, making use of the Toeplitz structure of covariance matrices.  
+
+References:
+  1. M. Gu, Y. He, X. Liu, and Y. Luo, Ab initio uncertainty quantification in scattering analysis of microscopy, arXiv preprint arXiv:2309.02468
+  2. Y. Ling, Superfast Inference for Stationary Gaussian Processes in Particle Tracking Microrheology, Ph.D. thesis, University of Waterloo (2019).
+  3. Cerbino, R. and Trappe, V., 2008. Differential dynamic microscopy: probing wave vector dependent dynamics with a microscope. Physical review letters, 100(18), p.188102.
+
+Installation:
+
+To use this package, please install the optimization toolbox in MATLAB and install the FFTW3 library. For Windows users and Mac users whose system is based on  X86_64 architecture (usually before 2021), FFTW3 library can be linked easily, and for Mac users with ARM architecture (M chips) the procedure may be more complicated.
+
+To install and link FFTW3 to your system, please refer to the FFTW_install_tutorial_2024.pdf
+
+Users need to have a C++ compiler in MATLAB and compile the cpp functions below (Only need to compile them once). Or execute the compile_cpp.m file to complete compilation.
+
+mex -I/usr/local/include -L/usr/local/Cellar/fftw_x86_64/lib -lfftw3 log_density.cpp -output log_density
+mex -I/usr/local/include -L/usr/local/Cellar/fftw_x86_64/lib -lfftw3 toeplitz_prod.cpp -output toeplitz_prod 
+mex -I/usr/local/include -L/usr/local/Cellar/fftw_x86_64/lib -lfftw3 toeplitz_solve.cpp -output toeplitz_solve 
+mex -I/usr/local/include -L/usr/local/Cellar/fftw_x86_64/lib -lfftw3 phi_log_det.cpp -output phi_log_det
+mex -I/usr/local/include -L/usr/local/Cellar/fftw_x86_64/lib -lfftw3 toeplitz_trace_grad.cpp -output toeplitz_trace_grad
+
+
+Contents:
+
+example.m - Show examples of some simulations and implement SAM() to real intensity data
+simulation.m - Simulation code for different stochastic processes
+neg_log_lik - Compute the negative log-likelihood of the processed intensity data. 
+log_lik_grad - Compute the derivative of negative log-likelihood w.r.t parameters. 
+SAM - Parameter estimation 
+cpp files: log_density, phi_log_det, toeplitz_prod, toeplitz_solve, toeplitz_trace_gradient, toeplitz_trace_hess
+
+The main functions are simulation() and SAM().
+
+Authors:
+Xubo Liu, Yue He, Mengyang Gu
+
+Department of Statistics and Applied Probability, University of California, Santa Barbara
+
+Email: mengyang@pstat.ucsb.edu
