@@ -1,5 +1,6 @@
 addpath('functions/');
 addpath('header/');
+addpath('Eigen/');
 
 % Please execute the "compile_cpp.m" file to compile C++ functions before using
 % the package. Users only need to compile the C++ funciton once.
