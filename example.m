@@ -1,17 +1,17 @@
 addpath('functions/');
 addpath('header/');
-addpath('Eigen/');
+addpath('data/');
 
 % Please execute the "compile_cpp.m" file to compile C++ functions before using
 % the package. Users only need to compile the C++ funciton once.
 
 %% Example 1: 
-rng(36);
+rng(1);
 sim_bm = simulation();
 show_simulation(sim_bm);
 plot_traj(sim_bm);
-plot_intensity(sim_bm.intensity);
-plot_intensity(sim_bm.intensity, NaN, 10, NaN, true); %10th frame, color image
+plot_intensity(sim_bm.intensity, NaN, NaN, sim_bm.sz);
+plot_intensity(sim_bm.intensity, NaN, 10, sim_bm.sz, NaN, true); %10th frame, color image
 
 sim_bm.sim_object = true; % Set this to be TRUE if the intensity profile is from a simulation
 sam = SAM(sim_bm);
@@ -76,6 +76,7 @@ intensity = table2array(intensity_ori);
 options = struct();
 options.mindt = 1;
 options.pxsz = 1;
+options.sz = [100,100];
 options.intensity = intensity;
 sam = SAM(options);
 show_sam(sam);
@@ -148,6 +149,16 @@ show_sam(sam_fbm);
 
 
 %% Example 7
+rng(1);
+% Simulation
+options = struct();
+options.sz = 100;
+options.len_t = 100;
+options.sigma_bm = 0.5;
+sim_bm = simulation(options);
+show_simulation(sim_bm);
+rng('default');
+
 theta = [2,1];
 d_input = 0:10;
 model_name = "user_defined";
