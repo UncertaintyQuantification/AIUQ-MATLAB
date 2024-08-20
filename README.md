@@ -1,9 +1,11 @@
 # AIUQ
-This package is for scattering analysis of microscopy. The code have been tested in MATLAB version 2022b.
+This package is for scattering analysis of microscopy. The code has been tested in MATLAB version 2022b.
+
+version 0.5.1
 
 Description:
 
-The package allows users to simulate 2D movements of some particels from different anisotropic or isotropic stochastic processes and model the mean squared displacement (MSD) given a dataset using Gaussian processes. Parameter estimation is performed in a fast approach, making use of the Toeplitz structure of covariance matrices.  
+The package allows users to simulate 2D movements of some particles from different anisotropic or isotropic stochastic processes and model the mean squared displacement (MSD) given a dataset using Gaussian processes. Parameter estimation is performed in a fast approach, making use of the Toeplitz structure of covariance matrices.  
 
 References:
   1. M. Gu, Y. He, X. Liu, and Y. Luo, Ab initio uncertainty quantification in scattering analysis of microscopy, arXiv preprint arXiv:2309.02468
