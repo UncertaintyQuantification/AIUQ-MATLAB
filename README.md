@@ -1,7 +1,7 @@
 # AIUQ
 This package is for scattering analysis of microscopy. The code has been tested in MATLAB version 2022b.
 
-version 0.5.1
+version 0.5.1.
 
 Description:
 
